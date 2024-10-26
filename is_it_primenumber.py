@@ -31,11 +31,11 @@ def prime(n):
     next_prime = divider[len(divider)-1] + index
     if prime1(next_prime) == "prime":
       divider.append(next_prime)
+      index = 1
       if n % next_prime == 0:
         return "not prime"
     else:
       index +=1
-    print(divider[len(divider)-1])
   return "prime"
     
 print(f"The number {number} is {prime(number)}.")
