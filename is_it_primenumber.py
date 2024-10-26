@@ -8,25 +8,25 @@ def prime1(n):
   global square
   global divider
   for i in range(len(divider)):
-    if n[abs(i-1)] < square and n[i] > square:
+    if int(n[abs(i-1)]) < square and int(n[i]) > square:
       return "prime"
     else:
-      if n % n[i] == 0:
+      if n % int(n[i]) == 0:
         return "not prime"
 
 def prime(n):
   global square
   global divider
   for i in range(len(divider)):
-    if n[abs(i-1)] < square and n[i] > square:
+    if int(n[abs(i-1)]) < square and int(n[i]) > square:
       return "prime"
     else:
-      if n % n[i] == 0:
+      if n % int(n[i]) == 0:
         return "not prime"
   
-  while n[len(n)] < square:
+  while int(n[len(n)]) < square:
     index = 1
-    next_prime = n[len(n)] + index
+    next_prime = int(n[len(n)]) + index
     if prime1(next_prime) == "prime":
       divider.append(next_prime)
       if n % next_prime == 0:
