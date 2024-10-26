@@ -1,6 +1,6 @@
 import math
 
-number = 57
+number = 1
 divider = [2,3,5,7,13,17]
 square = math.sqrt(number)
 
@@ -17,6 +17,8 @@ def prime1(n):
 def prime(n):
   global square
   global divider
+  if n == 1:
+    return "not prime"
   for i in range(len(divider)):
     print(divider[i])
     if divider[i-1] < square and divider[i] > square:
@@ -25,7 +27,7 @@ def prime(n):
       if n % divider[i] == 0:
         return "not prime"
   
-  while divider[len(divider)] < square:
+  while divider[len(divider)-1] < square:
     index = 1
     next_prime = divider[len(n)] + index
     if prime1(next_prime) == "prime":
@@ -36,4 +38,4 @@ def prime(n):
       index +=1
   return "prime"
     
-print(f"The number {number} is {prime(number)}")
+print(f"The number {number} is {prime(number)}.")
