@@ -1,8 +1,8 @@
 import math
 
-n = 57
+number = 57
 divider = [2,3,5,7,13,17]
-square = math.sqrt(n)
+square = math.sqrt(number)
 
 def prime1(n):
   global square
@@ -35,4 +35,4 @@ def prime(n):
       index +=1
   return "prime"
     
-print(f"The number {n} is {prime(n)}")
+print(f"The number {number} is {prime(number)}")
