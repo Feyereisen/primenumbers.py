@@ -1,6 +1,7 @@
 import math
+import random
 
-number = 432668237
+number = random.randint(1,100000000000000000000000000000000000000000000000)
 divider = [2,3,5,7,13,17]
 
 def find_prime(n):
