@@ -7,7 +7,7 @@ square = math.sqrt(n)
 def prime1(n):
   global square
   for i in range(len(divider)):
-    if n[i-1] < square and n[i] > square:
+    if n[abs(i-1)] < square and n[i] > square:
       return "prime"
     else:
       if n % n[i] == 0:
