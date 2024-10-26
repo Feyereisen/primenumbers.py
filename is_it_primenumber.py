@@ -5,20 +5,22 @@ divider = [2,3,5,7,13,17]
 square = math.sqrt(number)
 
 def prime1(n):
+  n = str(n)
   global square
   global divider
   for i in range(len(divider)):
-    if int(n[abs(i-1)]) < square and int(n[i]) > square:
+    if int(n[i-1]) < square and int(n[i]) > square:
       return "prime"
     else:
       if n % int(n[i]) == 0:
         return "not prime"
 
 def prime(n):
+  n = str(n)
   global square
   global divider
   for i in range(len(divider)):
-    if int(n[abs(i-1)]) < square and int(n[i]) > square:
+    if int(n[i-1]) < square and int(n[i]) > square:
       return "prime"
     else:
       if n % int(n[i]) == 0:
