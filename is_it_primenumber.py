@@ -6,6 +6,7 @@ square = math.sqrt(n)
 
 def prime1(n):
   global square
+  global divider
   for i in range(len(divider)):
     if n[abs(i-1)] < square and n[i] > square:
       return "prime"
@@ -15,8 +16,9 @@ def prime1(n):
 
 def prime(n):
   global square
+  global divider
   for i in range(len(divider)):
-    if n[i-1] < square and n[i] > square:
+    if n[abs(i-1)] < square and n[i] > square:
       return "prime"
     else:
       if n % n[i] == 0:
@@ -28,8 +30,9 @@ def prime(n):
     if prime1(next_prime) == "prime":
       divider.append(next_prime)
       if n % next_prime == 0:
-        return "prime"
+        return "not prime"
     else:
       index +=1
+  return "prime"
     
 print(f"The number {n} is {prime(n)}")
