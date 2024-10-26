@@ -8,7 +8,7 @@ def prime1(n):
   n_str = str(n)
   global square
   global divider
-  for i in range(len(divider)):
+  for i in range(len(divider)-1):
     if int(n_str[i-1]) < square and int(n_str[i]) > square:
       return "prime"
     else:
@@ -19,7 +19,7 @@ def prime(n):
   n_str = str(n)
   global square
   global divider
-  for i in range(len(divider)):
+  for i in range(len(divider)-1):
     if int(n_str[i-1]) < square and int(n_str[i]) > square:
       return "prime"
     else:
