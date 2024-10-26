@@ -1,12 +1,15 @@
 import math
 import random
 
-number = random.randint(1,100000000000000000000000000000000000000000000000)
-divider = [2,3,5,7,13,17]
+divider = [2, 3]
 
 def find_prime(n):
   global divider
   square = math.sqrt(n)
+  if n == 1:
+    return "not prime"
+  if n == 2 or n == 3:
+    return "prime"
   for i in range(len(divider)):
     if divider[i-1] < square and divider[i] > square:
       return "prime"
@@ -32,5 +35,10 @@ def prime(n):
     return "prime"
   else:
     return find_prime(n)
-    
-print(f"The number {number} is {prime(number)}.")
+
+prime_numbers = []
+max_number = 1000000
+for n in range(max_number):
+  if prime(n) == "prime":
+    prime_numbers.append(n)
+print(f"There are {len(prime_numbers)} prime numbers between 1 and {max_number}")
