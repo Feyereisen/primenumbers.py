@@ -37,7 +37,7 @@ def prime(n):
     return find_prime(n)
 
 prime_numbers = []
-max_number = 1000000
+max_number = 10000000
 for n in range(max_number):
   if prime(n) == "prime":
     prime_numbers.append(n)
