@@ -1,7 +1,7 @@
 import math
-import random
+import numpy as np
 
-divider = [2, 3]
+divider = np.loadtxt('divider.txt', dtype =int)
 
 def find_prime(n):
   global divider
@@ -26,7 +26,7 @@ def prime(n):
     while divider[len(divider)-1] < square:
       next_prime = divider[len(divider)-1] + index
       if find_prime(next_prime) == "prime":
-        divider.append(next_prime)
+        divider = np.append(divider, next_prime)
         index = 1
         if n % next_prime == 0:
           return "not prime"
@@ -36,9 +36,9 @@ def prime(n):
   else:
     return find_prime(n)
 
-prime_numbers = []
-max_number = 10000000
+prime_numbers = np.array([])
+max_number = 100
 for n in range(max_number):
   if prime(n) == "prime":
-    prime_numbers.append(n)
+    prime_numbers = np.append(prime_numbers, n)
 print(f"There are {len(prime_numbers)} prime numbers between 1 and {max_number}")
