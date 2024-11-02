@@ -42,3 +42,4 @@ for n in range(max_number):
   if prime(n) == "prime":
     prime_numbers = np.append(prime_numbers, n)
 print(f"There are {len(prime_numbers)} prime numbers between 1 and {max_number}")
+np.savetxt('divider.txt', divider, fmt='%d')
